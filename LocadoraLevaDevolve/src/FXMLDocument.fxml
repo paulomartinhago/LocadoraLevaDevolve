@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="301.0" prefWidth="435.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111" fx:controller="FXMLDocumentController">
+   <children>
+      <Button id="btnLogin" layoutX="334.0" layoutY="248.0" mnemonicParsing="false" text="Login" />
+      <Label layoutX="73.0" layoutY="64.0" prefHeight="43.0" prefWidth="80.0" text="Usuario" />
+      <Label layoutX="73.0" layoutY="148.0" prefHeight="26.0" prefWidth="80.0" text="Senha" />
+      <TextField id="txtFieldNome" fx:id="txtFieldUsuario" layoutX="73.0" layoutY="107.0" />
+      <TextField id="txtFieldSenha" fx:id="txtFieldSenha" layoutX="73.0" layoutY="183.0" />
+      <Label alignment="CENTER" layoutX="56.0" layoutY="29.0" prefHeight="43.0" prefWidth="323.0" text="LOCADORA LEVA E DEVOLVE" />
+   </children>
+</AnchorPane>
