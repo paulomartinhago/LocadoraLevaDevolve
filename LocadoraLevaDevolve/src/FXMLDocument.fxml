@@ -5,9 +5,9 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="301.0" prefWidth="435.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111" fx:controller="FXMLDocumentController">
+<AnchorPane id="AnchorPane" prefHeight="301.0" prefWidth="435.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXMLDocumentController">
    <children>
-      <Button id="btnLogin" layoutX="334.0" layoutY="248.0" mnemonicParsing="false" text="Login" />
+      <Button id="btnLogin" fx:id="btnLogin" layoutX="334.0" layoutY="248.0" mnemonicParsing="false" onAction="#Login" text="Login" />
       <Label layoutX="73.0" layoutY="64.0" prefHeight="43.0" prefWidth="80.0" text="Usuario" />
       <Label layoutX="73.0" layoutY="148.0" prefHeight="26.0" prefWidth="80.0" text="Senha" />
       <TextField id="txtFieldNome" fx:id="txtFieldUsuario" layoutX="73.0" layoutY="107.0" />
