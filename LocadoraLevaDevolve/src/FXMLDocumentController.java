@@ -1,18 +1,15 @@
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javax.swing.JOptionPane;
 import mapeamentos.Funcionario;
+import persistencia.DAO;
 
 public class FXMLDocumentController implements Initializable {
     
@@ -20,52 +17,41 @@ public class FXMLDocumentController implements Initializable {
     private TextField txtFieldUsuario;
     
     @FXML
-    private TextField txtFieldSenha;
+    private PasswordField txtFieldSenha;
     
     @FXML
     private Button btnLogin;
     
     @FXML
-    private void Login(ActionEvent event) {
-        
+    private void login(ActionEvent event) {
         if(txtFieldUsuario.getText().equals("") || txtFieldSenha.getText().equals("")){
             JOptionPane.showMessageDialog(null, "Login ou Senha inválido.", "", JOptionPane.ERROR_MESSAGE);
-        }else{
-            Connection con = null;
-            try {
-                Class.forName("com.mysql.jdbc.Driver");
-                con = DriverManager.getConnection("endereço_do_banco:5432","postgres","postgres");
-                Statement stm = con.createStatement();
-                String SQL = "Select login, senha from funcionarios where login = '"+ txtFieldUsuario.getText()+"';";
-                ResultSet rs = stm.executeQuery(SQL);
-                while(rs.next()) {
-                    String loginn = rs.getString("login");
-                    String senhaa = rs.getString("senha");
-                    String nomee = rs.getString("nome");
-                    if(txtFieldUsuario.getText().equals(loginn) && txtFieldSenha.getText().equals(senhaa)){
-                        JOptionPane.showMessageDialog(null,"Seja bem vindo: " + nomee,"",JOptionPane.INFORMATION_MESSAGE);
-                    }else{
-                        JOptionPane.showMessageDialog(null,"Login ou Senha inválidos.","",JOptionPane.ERROR_MESSAGE);
-                        txtFieldSenha.setText("");
-                    }
-                }
-            }catch(SQLException e){
-                e.printStackTrace();
-                JOptionPane.showMessageDialog(null,"Erro na conexão, com o banco de dados!","",JOptionPane.WARNING_MESSAGE);
-            }catch (ClassNotFoundException e) {
-                e.printStackTrace();
-            }finally {
-                try{
-                    con.close();
-                }catch(SQLException onConClose){
-                    JOptionPane.showMessageDialog(null,"Erro na conexão, com o banco de dados!","",JOptionPane.WARNING_MESSAGE);
-                    onConClose.printStackTrace();
+        } else {
+            DAO dao = new DAO();
+            
+            ArrayList <Funcionario> lista;
+            lista = (ArrayList <Funcionario>) dao.consultar(Funcionario.class);
+            
+            Boolean logado = false;
+            Funcionario usuario = null;
+
+            for (int i = 0; i < lista.size(); i++){
+                if(
+                    lista.get(i).getLogin().equals(txtFieldUsuario.getText()) &&
+                    lista.get(i).getSenha().equals(txtFieldSenha.getText()) 
+                ){
+                    logado = true;
+                    usuario = lista.get(i);
                 }
             }
+            
+            if(logado){
+                JOptionPane.showMessageDialog(null, "Seja bem vindo: " + usuario.getNome(), "", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane.showMessageDialog(null, "Login ou Senha inválidos.", "", JOptionPane.ERROR_MESSAGE);
+                txtFieldSenha.setText("");
+            }
         }
-        txtFieldUsuario.setText("");
-        txtFieldSenha.setText("");
-
     }
     
     @Override

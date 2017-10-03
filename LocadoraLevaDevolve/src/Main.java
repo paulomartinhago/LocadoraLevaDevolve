@@ -3,7 +3,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import persistencia.TesteDePersistencia;
+//import persistencia.TesteDePersistencia;
 
 public class Main extends Application 
 {
@@ -22,10 +22,10 @@ public class Main extends Application
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // launch(args);
+        launch(args);
         
-        TesteDePersistencia testeDePersistencia = new TesteDePersistencia();
-        testeDePersistencia.testar();
+//        TesteDePersistencia testeDePersistencia = new TesteDePersistencia();
+//        testeDePersistencia.testar();
     }
     
 }
