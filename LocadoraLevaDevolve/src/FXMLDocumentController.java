@@ -1,9 +1,13 @@
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -23,7 +27,7 @@ public class FXMLDocumentController implements Initializable {
     private Button btnLogin;
     
     @FXML
-    private void login(ActionEvent event) {
+    private void login(ActionEvent event) throws IOException {
         if(txtFieldUsuario.getText().equals("") || txtFieldSenha.getText().equals("")){
             JOptionPane.showMessageDialog(null, "Login ou Senha inválido.", "", JOptionPane.ERROR_MESSAGE);
         } else {
@@ -47,6 +51,10 @@ public class FXMLDocumentController implements Initializable {
             
             if(logado){
                 JOptionPane.showMessageDialog(null, "Seja bem vindo: " + usuario.getNome(), "", JOptionPane.INFORMATION_MESSAGE);
+                
+                Parent root = FXMLLoader.load(getClass().getResource("FXMLTelaInicial.fxml"));
+                Scene scene = new Scene(root);
+                Main.myStage.setScene(scene);
             } else {
                 JOptionPane.showMessageDialog(null, "Login ou Senha inválidos.", "", JOptionPane.ERROR_MESSAGE);
                 txtFieldSenha.setText("");
