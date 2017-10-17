@@ -15,10 +15,10 @@ public class FXMLTelaInicialController implements Initializable {
     private Menu menu;
     
     @FXML
-    private MenuItem btnCadastrar;
-    private MenuItem btnRegistrar;
-    private MenuItem btnRelatorios;
-    private MenuItem btnSair;
+    private MenuItem btnMenuCadastrar;
+    private MenuItem btnMenuRegistrar;
+    private MenuItem btnMenuRelatorios;
+    private MenuItem btnMenuSair;
     
     @FXML
     private MenuItem btnProfissional;
