@@ -5,11 +5,11 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXMLTelaInicialController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXMLTelaInicialController">
    <children>
-      <MenuBar layoutX="31.0" layoutY="29.0">
+      <MenuBar layoutX="31.0" layoutY="29.0" prefHeight="50.0" prefWidth="740.0">
         <menus>
-          <Menu fx:id="btnCadastrar" mnemonicParsing="false" text="Cadastrar">
+          <Menu id="btnMenuCadastrar" fx:id="btnMenuCadastrar" mnemonicParsing="false" text="Cadastrar">
             <items>
               <MenuItem fx:id="btnProfissional" mnemonicParsing="false" text="Profissional" />
                   <MenuItem fx:id="btnLivro" mnemonicParsing="false" text="Livro" />
@@ -17,19 +17,19 @@
                   <MenuItem fx:id="btnCategoria" mnemonicParsing="false" text="Categoria de Livro" />
             </items>
           </Menu>
-          <Menu fx:id="btnRegistrar" mnemonicParsing="false" text="Registrar">
+          <Menu fx:id="btnMenuRegistrar" mnemonicParsing="false" text="Registrar">
             <items>
               <MenuItem fx:id="btnEmprestimo" mnemonicParsing="false" text="Emprestimo" />
                   <MenuItem fx:id="btnDevolucao" mnemonicParsing="false" text="Devolucao" />
             </items>
           </Menu>
-          <Menu fx:id="btnRelatorios" mnemonicParsing="false" text="Relatorios">
+          <Menu fx:id="btnMenuRelatorios" mnemonicParsing="false" text="Relatorios">
             <items>
               <MenuItem fx:id="btnEmprestimoCliente" mnemonicParsing="false" text="Emprestimos por cliente" />
                   <MenuItem fx:id="btnEmprestimoAndamento" mnemonicParsing="false" text="Emprestimos em andamento" />
             </items>
           </Menu>
-            <Menu fx:id="btnRegistrar1" mnemonicParsing="false" text="Sair" />
+            <Menu fx:id="btnMenuSair" mnemonicParsing="false" text="Sair" />
         </menus>
       </MenuBar>
    </children>
