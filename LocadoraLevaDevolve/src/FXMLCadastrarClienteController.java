@@ -17,57 +17,57 @@ import mapeamentos.Cliente;
 import persistencia.DAO;
 
 public class FXMLCadastrarClienteController implements Initializable {
-    
+
     private DAO dao = new DAO();
-    
+
     @FXML
     private TextField txtNome;
-    
+
     @FXML
     private TextField txtTelefone;
-    
+
     @FXML
     private TableView tableList;
-    
+
     @FXML
     private TableColumn columnId;
-    
+
     @FXML
     private TableColumn columnNome;
-    
+
     private ObservableList<Cliente> listaClientes;
-    
+
     @FXML
     private void onCadastraCliente(ActionEvent event) throws IOException
     {
         String nome = txtNome.getText();
         String telefone = txtTelefone.getText();
-        
+
         Cliente cliente = new Cliente();
         cliente.setNome(nome);
         cliente.setTelefone(telefone);
-        
+
         dao.salvar(cliente);
-        
+
         JOptionPane.showMessageDialog(null, "Cliente cadastrado com sucesso!", "", JOptionPane.INFORMATION_MESSAGE);
-        
+
         carregaDadosTabela();
     }
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         columnId.setCellValueFactory(new PropertyValueFactory("cliente_id"));
         columnNome.setCellValueFactory(new PropertyValueFactory("nome"));
-        
+
         carregaDadosTabela();
-    }    
-    
+    }
+
     private void carregaDadosTabela() {
         listaClientes = dao.consultar(Cliente.class);
         tableList.setItems(listaClientes);
-        
+
 //        listaPokemon = dao.consultar(Pokemon.class);
 //        tv_pokemon.setItems(listaPokemon);
     }
-    
+
 }

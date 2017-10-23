@@ -9,7 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 
 public class FXMLTelaInicialController implements Initializable {
-    
+
     @FXML
     private void onMenuCadastrarCliente(ActionEvent event) throws IOException
     {
@@ -17,10 +17,10 @@ public class FXMLTelaInicialController implements Initializable {
         Scene scene = new Scene(root);
         Main.myStage.setScene(scene);
     }
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
-    
+        // TODOW
+    }
+
 }

@@ -6,7 +6,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXMLTelaInicialController">
-   <children>
       <MenuBar layoutX="31.0" layoutY="29.0" prefHeight="50.0" prefWidth="740.0">
         <menus>
           <Menu id="btnMenuCadastrar" fx:id="btnMenuCadastrar" mnemonicParsing="false" text="Cadastrar">
