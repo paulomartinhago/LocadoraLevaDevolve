@@ -2,34 +2,41 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXMLCadastrarClienteController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXMLCadastrarClienteController">
    <children>
-      <Button fx:id="btnCadastrar" layoutX="584.0" layoutY="492.0" mnemonicParsing="false" text="Cadastrar">
+      <Button layoutX="642.0" layoutY="138.0" mnemonicParsing="false" onAction="#onCadastraCliente" text="Salvar">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <TextField layoutX="142.0" layoutY="256.0" />
-      <TextField layoutX="142.0" layoutY="371.0" />
-      <Label layoutX="142.0" layoutY="205.0" text="Nome">
+      <TextField fx:id="txtNome" layoutX="107.0" layoutY="144.0" />
+      <TextField fx:id="txtTelefone" layoutX="446.0" layoutY="144.0" />
+      <Label layoutX="28.0" layoutY="142.0" text="Nome">
          <font>
             <Font name="Verdana" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="142.0" layoutY="316.0" text="Telefone">
+      <Label layoutX="331.0" layoutY="142.0" text="Telefone">
          <font>
             <Font name="Verdana" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="243.0" layoutY="119.0" text="Cadastrar Cliente">
+      <Label layoutX="28.0" layoutY="80.0" text="Cadastrar Cliente">
          <font>
             <Font name="Verdana" size="36.0" />
          </font>
       </Label>
+      <TableView fx:id="tableList" layoutX="28.0" layoutY="200.0" prefHeight="380.0" prefWidth="747.0">
+        <columns>
+          <TableColumn fx:id="columnId" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="columnNome" prefWidth="75.0" text="Nome" />
+        </columns>
+      </TableView>
    </children>
 </AnchorPane>

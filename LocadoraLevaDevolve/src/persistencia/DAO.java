@@ -1,6 +1,8 @@
 package persistencia;
 
 import java.util.List;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import utils.HibernateUtil;
@@ -17,13 +19,18 @@ public class DAO
         session.close();
     }
     
-    public List consultar(Class classe)
-    {
+    public ObservableList consultar(Class classe){
         Session session = HibernateUtil.getSessionFactory().openSession();
         Criteria crit = session.createCriteria(classe);
         List results = crit.list();
-        
-        return results;
+        session.flush();//LiberaMemoria
+        session.close();
+        //Convertendo List em ObservableList
+        ObservableList lista = FXCollections.observableArrayList();
+        for (int i = 0; i < results.size();i++){
+            lista.add(results.get(i));
+        }
+        return lista;
     }
     
     public void update (Object objeto)

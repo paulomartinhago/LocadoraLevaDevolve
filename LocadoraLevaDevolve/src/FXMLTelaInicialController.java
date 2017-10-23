@@ -1,40 +1,22 @@
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Menu;
-import javafx.scene.control.MenuBar;
-import javafx.scene.control.MenuItem;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 
 public class FXMLTelaInicialController implements Initializable {
     
     @FXML
-    private MenuBar menuBar;
-    
-    @FXML
-    private Menu menu;
-    
-    @FXML
-    private MenuItem btnMenuCadastrar;
-    private MenuItem btnMenuRegistrar;
-    private MenuItem btnMenuRelatorios;
-    private MenuItem btnMenuSair;
-    
-    @FXML
-    private MenuItem btnProfissional;
-    private MenuItem btnLivro;
-    private MenuItem btnCLiente;
-    private MenuItem btnCategoriaLivro;
-    
-    @FXML
-    private MenuItem btnEmprestimo;
-    private MenuItem btnDevolucao;
-    
-    @FXML
-    private MenuItem btnEmprestimoCLiente;
-    private MenuItem btnEmprestimoAndamento;
-    
-    
+    private void onMenuCadastrarCliente(ActionEvent event) throws IOException
+    {
+        Parent root = FXMLLoader.load(getClass().getResource("FXMLCadastrarCliente.fxml"));
+        Scene scene = new Scene(root);
+        Main.myStage.setScene(scene);
+    }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {

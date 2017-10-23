@@ -5,7 +5,7 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXMLTelaInicialController">
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXMLTelaInicialController">
    <children>
       <MenuBar layoutX="31.0" layoutY="29.0" prefHeight="50.0" prefWidth="740.0">
         <menus>
@@ -13,7 +13,7 @@
             <items>
               <MenuItem fx:id="btnProfissional" mnemonicParsing="false" text="Profissional" />
                   <MenuItem fx:id="btnLivro" mnemonicParsing="false" text="Livro" />
-                  <MenuItem fx:id="btnCliente" mnemonicParsing="false" text="Cliente" />
+                  <MenuItem fx:id="btnCliente" mnemonicParsing="false" onAction="#onMenuCadastrarCliente" text="Cliente" />
                   <MenuItem fx:id="btnCategoria" mnemonicParsing="false" text="Categoria de Livro" />
             </items>
           </Menu>

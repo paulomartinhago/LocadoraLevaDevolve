@@ -12,7 +12,7 @@ public class Main extends Application
     @Override
     public void start(final Stage stage) throws Exception 
     {
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("FXMLTelaInicial.fxml"));
         
         Scene scene = new Scene(root);
 
