@@ -23,13 +23,17 @@ public class DAO
         Session session = HibernateUtil.getSessionFactory().openSession();
         Criteria crit = session.createCriteria(classe);
         List results = crit.list();
+        
         session.flush();//LiberaMemoria
         session.close();
+        
         //Convertendo List em ObservableList
         ObservableList lista = FXCollections.observableArrayList();
+        
         for (int i = 0; i < results.size();i++){
             lista.add(results.get(i));
         }
+        
         return lista;
     }
     

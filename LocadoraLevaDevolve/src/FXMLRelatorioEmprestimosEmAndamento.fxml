@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="530.0" prefWidth="740.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXMLRelatorioEmprestimosEmAndamentoController">
+   <children>
+      <Label layoutY="14.0" text="Relatório de Emprestimos em andamento">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Button layoutY="88.0" mnemonicParsing="false" onAction="#onGerarRelatorio" prefHeight="38.0" prefWidth="194.0" text="Gerar Relatorio">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

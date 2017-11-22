@@ -66,6 +66,9 @@ public class Livro implements Serializable
         this.nome = nome;
     }
     
-    
+    @Override
+    public String toString(){
+        return this.nome;
+    }
 
 }

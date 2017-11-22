@@ -74,5 +74,9 @@ public class CategoriaLivro implements Serializable
         this.preco = preco;
     }
     
+    @Override
+    public String toString(){
+        return this.nome+ " (R$ " + this.preco + ")";
+    }
     
 }

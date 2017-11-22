@@ -44,6 +44,9 @@ public class Emprestimo implements Serializable
     @Column
     @Type(type="date")
     private Date data_devolucao;
+            
+    @Column
+    private Double total;
 
     public Integer getEmprestimo_id() {
         return emprestimo_id;
@@ -99,5 +102,11 @@ public class Emprestimo implements Serializable
     }
     
     
+    public Double getTotal() {
+        return total;
+    }
 
+    public void setTotal(Double total) {
+        this.total = total;
+    }
 }

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1302c581-84d5-4e52-882b-4acadcbc87d9">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     emprestimo."emprestimo_id" AS emprestimo_emprestimo_id,
+     emprestimo."data_emprestimo" AS emprestimo_data_emprestimo,
+     emprestimo."total" AS emprestimo_total,
+     cliente."nome" AS cliente_nome
+FROM
+     "public"."cliente" cliente INNER JOIN "public"."emprestimo" emprestimo ON cliente."cliente_id" = emprestimo."cliente_id"]]>
+	</queryString>
+	<field name="emprestimo_emprestimo_id" class="java.lang.Integer"/>
+	<field name="emprestimo_data_emprestimo" class="java.sql.Date"/>
+	<field name="emprestimo_total" class="java.lang.Double"/>
+	<field name="cliente_nome" class="java.lang.String"/>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="083093a9-2470-4786-9eb6-ac601c4b5210"/>
+				<staticText>
+					<reportElement x="20" y="20" width="257" height="23" forecolor="#FFFFFF" uuid="7e15be84-d048-4402-9aa9-070a70b9e618"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Locadora]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="359" y="40" width="215" height="20" forecolor="#FFFFFF" uuid="699279bc-4ee3-4995-9da1-dbc793af0b9c"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Empréstimos em andamento]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="19" y="40" width="340" height="34" forecolor="#FFFFFF" uuid="1d168063-cb26-4d43-a559-b0f8c5fe839a"/>
+					<textElement>
+						<font size="22" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Leva&Devolve]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="444bc9ec-38df-4df1-88a9-c11b4e8279bc"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="74" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="f499b0fe-8b44-4260-b902-ceaf55612ca8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="74" y="0" width="160" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="31fbede7-f7c2-4916-a5d6-54d051f02ac5"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data do empréstimo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="234" y="0" width="95" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="5b019813-0762-49e1-bcf5-be578a6b3225"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valor Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="329" y="0" width="226" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="3cd8142b-f51b-4d95-a340-796596ca4f99"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cliente]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="e0a1bf36-34df-48d1-9adc-1bca3faac4e9"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="74" height="20" uuid="9685a2ce-5087-42f3-8d0e-728fb30cf861"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{emprestimo_emprestimo_id}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="74" y="0" width="160" height="20" uuid="1a28acfc-d4f6-44c1-8db8-505e1f5c8b15"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{emprestimo_data_emprestimo}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="234" y="0" width="95" height="20" uuid="4ee54f12-2954-4a04-9e53-4c768fbee6eb"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{emprestimo_total}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="329" y="0" width="226" height="20" uuid="135d65cf-1d69-4baa-9296-abd7e07cb568"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cliente_nome}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="bfd6bf50-9c48-44b6-a225-a12d46125c68"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="1fa35d63-b694-49b7-9032-9d5a6c1ab2d8"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="99a14256-8476-4210-b9f4-455fd8a9810e"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

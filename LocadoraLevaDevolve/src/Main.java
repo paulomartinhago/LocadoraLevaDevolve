@@ -3,16 +3,18 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import mapeamentos.Funcionario;
 //import persistencia.TesteDePersistencia;
 
 public class Main extends Application 
 {
     public static Stage myStage;
+    public static Funcionario usuario;
     
     @Override
     public void start(final Stage stage) throws Exception 
     {
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLTelaInicial.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("FXMLLogin.fxml"));
         
         Scene scene = new Scene(root);
 

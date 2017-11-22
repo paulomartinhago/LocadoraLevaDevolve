@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="530.0" prefWidth="740.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXMLRelatorioEmprestimosPorClienteController">
+   <children>
+      <Label layoutY="14.0" text="Relatório de Emprestimos por cliente">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label layoutY="79.0" text="Cliente:">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="comboClientes" layoutX="107.0" layoutY="75.0" prefHeight="38.0" prefWidth="296.0" />
+      <Button layoutX="107.0" layoutY="137.0" mnemonicParsing="false" onAction="#onGerarRelatorio" prefHeight="38.0" prefWidth="296.0" text="Gerar Relatorio">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

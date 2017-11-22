@@ -1,7 +1,7 @@
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,8 +15,8 @@ import javax.swing.JOptionPane;
 import mapeamentos.Funcionario;
 import persistencia.DAO;
 
-public class FXMLDocumentController implements Initializable {
-    
+public class FXMLLoginController implements Initializable 
+{    
     @FXML
     private TextField txtFieldUsuario;
     
@@ -26,6 +26,8 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private Button btnLogin;
     
+    private ObservableList<Funcionario> listaFuncionarios;
+    
     @FXML
     private void login(ActionEvent event) throws IOException {
         if(txtFieldUsuario.getText().equals("") || txtFieldSenha.getText().equals("")){
@@ -33,24 +35,23 @@ public class FXMLDocumentController implements Initializable {
         } else {
             DAO dao = new DAO();
             
-            ArrayList <Funcionario> lista;
-            lista = (ArrayList <Funcionario>) dao.consultar(Funcionario.class);
+            listaFuncionarios = dao.consultar(Funcionario.class);
             
             Boolean logado = false;
             Funcionario usuario = null;
 
-            for (int i = 0; i < lista.size(); i++){
+            for (int i = 0; i < listaFuncionarios.size(); i++){
                 if(
-                    lista.get(i).getLogin().equals(txtFieldUsuario.getText()) &&
-                    lista.get(i).getSenha().equals(txtFieldSenha.getText()) 
+                    listaFuncionarios.get(i).getLogin().equals(txtFieldUsuario.getText()) &&
+                    listaFuncionarios.get(i).getSenha().equals(txtFieldSenha.getText()) 
                 ){
                     logado = true;
-                    usuario = lista.get(i);
+                    usuario = listaFuncionarios.get(i);
                 }
             }
             
             if(logado){
-                JOptionPane.showMessageDialog(null, "Seja bem vindo: " + usuario.getNome(), "", JOptionPane.INFORMATION_MESSAGE);
+                Main.usuario = usuario;
                 
                 Parent root = FXMLLoader.load(getClass().getResource("FXMLTelaInicial.fxml"));
                 Scene scene = new Scene(root);

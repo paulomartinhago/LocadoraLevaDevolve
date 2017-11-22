@@ -63,6 +63,9 @@ public class Cliente implements Serializable
         this.telefone = telefone;
     }
     
-    
+    @Override
+    public String toString(){
+        return this.nome;
+    }
 
 }

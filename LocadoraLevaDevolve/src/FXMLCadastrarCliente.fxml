@@ -8,35 +8,46 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXMLCadastrarClienteController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="740.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXMLCadastrarClienteController">
    <children>
-      <Button layoutX="642.0" layoutY="138.0" mnemonicParsing="false" onAction="#onCadastraCliente" text="Salvar">
+      <Button layoutX="1.0" layoutY="477.0" mnemonicParsing="false" onAction="#onCadastraCliente" text="Cadastrar">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <TextField fx:id="txtNome" layoutX="107.0" layoutY="144.0" />
-      <TextField fx:id="txtTelefone" layoutX="446.0" layoutY="144.0" />
-      <Label layoutX="28.0" layoutY="142.0" text="Nome">
+      <TextField fx:id="txtNome" layoutX="79.0" layoutY="433.0" />
+      <TextField fx:id="txtTelefone" layoutX="418.0" layoutY="433.0" />
+      <Label layoutY="431.0" text="Nome">
          <font>
             <Font name="Verdana" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="331.0" layoutY="142.0" text="Telefone">
+      <Label layoutX="303.0" layoutY="431.0" text="Telefone">
          <font>
             <Font name="Verdana" size="24.0" />
          </font>
       </Label>
-      <Label layoutX="28.0" layoutY="80.0" text="Cadastrar Cliente">
+      <Label layoutY="14.0" text="Cadastrar Cliente">
          <font>
-            <Font name="Verdana" size="36.0" />
+            <Font size="25.0" />
          </font>
       </Label>
-      <TableView fx:id="tableList" layoutX="28.0" layoutY="200.0" prefHeight="380.0" prefWidth="747.0">
+      <TableView fx:id="tableList" layoutY="57.0" onMouseClicked="#eventoTabela" onTouchMoved="#eventoTabela" onTouchPressed="#eventoTabela" onTouchReleased="#eventoTabela" onTouchStationary="#eventoTabela" prefHeight="355.0" prefWidth="740.0">
         <columns>
           <TableColumn fx:id="columnId" prefWidth="75.0" text="ID" />
-          <TableColumn fx:id="columnNome" prefWidth="75.0" text="Nome" />
+          <TableColumn fx:id="columnNome" prefWidth="385.0" text="Nome" />
+            <TableColumn fx:id="columnTelefone" prefWidth="286.0" text="Telefone" />
         </columns>
       </TableView>
+      <Button layoutX="141.0" layoutY="477.0" mnemonicParsing="false" onAction="#onEditarCliente" text="Editar">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button layoutX="243.0" layoutY="477.0" mnemonicParsing="false" onAction="#onExcluirCliente" text="Excluir">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

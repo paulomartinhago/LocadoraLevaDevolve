@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f0dd0d23-6fd5-4729-9736-3c1e32eb4055">
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     emprestimo."emprestimo_id" AS emprestimo_emprestimo_id,
+     emprestimo."data_devolucao" AS emprestimo_data_devolucao,
+     emprestimo."data_emprestimo" AS emprestimo_data_emprestimo,
+     emprestimo."status" AS emprestimo_status,
+     emprestimo."cliente_id" AS emprestimo_cliente_id,
+     emprestimo."total" AS emprestimo_total,
+     emprestimoitem."preco_livro" AS emprestimoitem_preco_livro,
+     emprestimoitem."livro_id" AS emprestimoitem_livro_id,
+     emprestimoitem."emprestimo_id" AS emprestimoitem_emprestimo_id,
+     livro."livro_id" AS livro_livro_id,
+     livro."nome" AS livro_nome,
+     livro."categoria_id" AS livro_categoria_id
+FROM
+     "public"."emprestimo" emprestimo INNER JOIN "public"."emprestimoitem" emprestimoitem ON emprestimo."emprestimo_id" = emprestimoitem."emprestimo_id"
+     INNER JOIN "public"."livro" livro ON emprestimoitem."livro_id" = livro."livro_id"]]>
+	</queryString>
+	<field name="emprestimo_emprestimo_id" class="java.lang.Integer"/>
+	<field name="emprestimo_data_devolucao" class="java.sql.Date"/>
+	<field name="emprestimo_data_emprestimo" class="java.sql.Date"/>
+	<field name="emprestimo_status" class="java.lang.String"/>
+	<field name="emprestimo_cliente_id" class="java.lang.Integer"/>
+	<field name="emprestimo_total" class="java.lang.Double"/>
+	<field name="emprestimoitem_preco_livro" class="java.lang.Double"/>
+	<field name="emprestimoitem_livro_id" class="java.lang.Integer"/>
+	<field name="emprestimoitem_emprestimo_id" class="java.lang.Integer"/>
+	<field name="livro_livro_id" class="java.lang.Integer"/>
+	<field name="livro_nome" class="java.lang.String"/>
+	<field name="livro_categoria_id" class="java.lang.Integer"/>
+	<group name="emprestimo_data_emprestimo">
+		<groupExpression><![CDATA[$F{emprestimo_data_emprestimo}]]></groupExpression>
+		<groupHeader>
+			<band height="33">
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="0" width="100" height="32" forecolor="#666666" backcolor="#E6E6E6" uuid="19ccb05b-f9f1-4d9f-bbeb-5d9ed535b240"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[emprestimo_data_emprestimo]]></text>
+				</staticText>
+				<textField>
+					<reportElement mode="Opaque" x="100" y="0" width="455" height="32" forecolor="#006699" backcolor="#E6E6E6" uuid="5285e355-8278-4bd9-92ad-2343c699ad7b"/>
+					<textElement>
+						<font size="24" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{emprestimo_data_emprestimo}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="-20" y="32" width="595" height="1" forecolor="#666666" uuid="6c885761-dec8-4295-ac72-7d31b163da4e"/>
+				</line>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="e605928b-f5fc-4d25-9b16-7ec0ea60f2d1"/>
+				<staticText>
+					<reportElement x="20" y="20" width="234" height="43" forecolor="#FFFFFF" uuid="ae7899a7-9e66-4dd9-97a6-ef1076eb0e11"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[TITLE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="395" y="43" width="180" height="20" forecolor="#FFFFFF" uuid="b4624438-09d2-4eef-8b2c-fd69f4305f28"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Add a description here]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="303c3ac1-3edd-4421-84bc-c5f7705c9ec4"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="50" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="c7b7a2f0-c420-49bd-9f09-e722b70eee62"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[emprestimo_emprestimo_id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="50" y="0" width="50" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="2acfaac9-3b17-4653-9d75-8b775a5d3cfe"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[emprestimo_data_devolucao]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="100" y="0" width="50" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="8575bac2-c940-4a53-b693-8274e6e6a52e"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[emprestimo_status]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="150" y="0" width="50" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="8e0c197a-eed1-412b-9101-eb52e78e5903"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[emprestimo_cliente_id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="200" y="0" width="50" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="9ce57096-c473-4fd7-ba1a-f8ba27b126c5"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[emprestimo_total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="250" y="0" width="50" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="556d0b1c-ac1c-4def-a157-fd42b7128b02"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[emprestimoitem_preco_livro]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="300" y="0" width="50" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="51d6652e-48c3-467f-b18d-3c3dd78e8f4f"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[emprestimoitem_livro_id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="350" y="0" width="50" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="28c6fed1-0f9d-4ae6-a215-b748507b03d2"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[emprestimoitem_emprestimo_id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="400" y="0" width="50" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="0212b86c-c8c9-4b04-8a7c-4fe1a46e3a6f"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[livro_livro_id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="450" y="0" width="50" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="ddee0cd8-a2f4-41d9-81ce-1eb7cc881d93"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[livro_nome]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="500" y="0" width="50" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="e02ef084-668b-4938-aa17-79cdeb30c7ac"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[livro_categoria_id]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="331338c9-dde5-4c51-af9f-ee44e1303e1b"/>
+			</line>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="50" height="20" uuid="e805817e-e43c-471c-a19c-8157bb4c4f95"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{emprestimo_emprestimo_id}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="50" y="0" width="50" height="20" uuid="3f554a5d-e028-453d-827e-3d0fd5d70a3e"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{emprestimo_data_devolucao}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="100" y="0" width="50" height="20" uuid="44a017b4-3e80-460d-86df-4c26608e8ce3"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{emprestimo_status}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="150" y="0" width="50" height="20" uuid="10add3df-eff6-4bc5-b819-3c6e7a3d076e"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{emprestimo_cliente_id}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="200" y="0" width="50" height="20" uuid="543606bb-4a11-47ea-8cd9-78b95785a7d1"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{emprestimo_total}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="250" y="0" width="50" height="20" uuid="32ce6d56-e0ee-403e-8482-747a69b4c5d9"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{emprestimoitem_preco_livro}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="300" y="0" width="50" height="20" uuid="fe386c2f-6d6d-428b-a01d-aa2690bb770f"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{emprestimoitem_livro_id}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="350" y="0" width="50" height="20" uuid="920bf750-cb37-437c-8241-c0b97f646a76"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{emprestimoitem_emprestimo_id}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="400" y="0" width="50" height="20" uuid="0b728ec4-49ee-4b8a-b0d2-a3da2e739e60"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{livro_livro_id}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="450" y="0" width="50" height="20" uuid="ea93b11b-e76b-4f3a-bacc-04b0bd27b0f5"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{livro_nome}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="500" y="0" width="50" height="20" uuid="4811afcd-52fc-4f58-ae79-4bd009ddb9f8"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{livro_categoria_id}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="a45d9a9c-ba8a-4bc0-87f3-3a349281e6ff"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="2282c18e-9982-40cc-a523-99bc13de176e"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="0323b28b-35c6-4b78-be0e-2e333dd0c156"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

@@ -1,37 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXMLCadastrarLivroController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="530.0" prefWidth="740.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FXMLCadastrarLivroController">
    <children>
-      <Button layoutX="587.0" layoutY="506.0" mnemonicParsing="false" text="Cadastrar">
+      <Button layoutY="471.0" mnemonicParsing="false" onAction="#onCadastraLivro" text="Cadastrar">
          <font>
-            <Font name="Verdana" size="20.0" />
+            <Font size="20.0" />
          </font>
       </Button>
-      <Label layoutX="261.0" layoutY="116.0" text="Cadastrar Livro">
-         <font>
-            <Font name="Verdana" size="36.0" />
-         </font>
-      </Label>
-      <Label layoutX="161.0" layoutY="218.0" text="Nome">
+      <TextField fx:id="txtNome" layoutX="79.0" layoutY="421.0" />
+      <Label layoutY="419.0" text="Nome">
          <font>
             <Font name="Verdana" size="24.0" />
          </font>
       </Label>
-      <TextField layoutX="161.0" layoutY="288.0" prefHeight="192.0" prefWidth="278.0" />
-      <RadioButton layoutX="607.0" layoutY="240.0" mnemonicParsing="false" text="Novo" />
-      <RadioButton layoutX="607.0" layoutY="292.0" mnemonicParsing="false" text="Importado" />
-      <RadioButton layoutX="607.0" layoutY="352.0" mnemonicParsing="false" text="Raro" />
-      <Label layoutX="595.0" layoutY="188.0" text="Categoria">
+      <Label layoutY="14.0" text="Cadastrar Livro">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tableList" layoutY="57.0" onMouseClicked="#eventoTabela" onTouchMoved="#eventoTabela" onTouchPressed="#eventoTabela" onTouchReleased="#eventoTabela" onTouchStationary="#eventoTabela" prefHeight="335.0" prefWidth="740.0">
+        <columns>
+          <TableColumn fx:id="columnId" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="columnNome" prefWidth="359.0" text="Nome" />
+          <TableColumn fx:id="columnCategoria" minWidth="0.0" prefWidth="303.0" text="Categoria" />
+        </columns>
+      </TableView>
+      <Button layoutX="140.0" layoutY="471.0" mnemonicParsing="false" onAction="#onEditarLivro" text="Editar">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button layoutX="242.0" layoutY="471.0" mnemonicParsing="false" onAction="#onExcluirLivro" text="Excluir">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Label layoutX="276.0" layoutY="419.0" text="Categoria">
          <font>
             <Font name="Verdana" size="24.0" />
          </font>
       </Label>
+      <ComboBox fx:id="comboCategoria" layoutX="414.0" layoutY="421.0" prefWidth="150.0" />
    </children>
 </AnchorPane>
