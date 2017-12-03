@@ -24,7 +24,6 @@
             <items>
               <MenuItem fx:id="btnEmprestimo" mnemonicParsing="false" onAction="#onMenuRegistrarEmprestimoLivro" text="Emprestimo" />
                   <MenuItem fx:id="btnDevolucao" mnemonicParsing="false" onAction="#onMenuRegistrarDevolucaoLivro" text="Devolucao" />
-                  <MenuItem fx:id="btnDevolucao1" mnemonicParsing="false" onAction="#onMenuRegistrarDevolucaoLivro" text="Devolucao" />
             </items>
           </Menu>
             <Menu mnemonicParsing="false" text="Relatorios">

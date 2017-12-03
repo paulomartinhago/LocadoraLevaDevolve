@@ -65,7 +65,9 @@ public class Gerador
             "     emprestimo.\"total\" AS emprestimo_total,\n" +
             "     cliente.\"nome\" AS cliente_nome\n" +
             "FROM\n" +
-            "     \"public\".\"cliente\" cliente INNER JOIN \"public\".\"emprestimo\" emprestimo ON cliente.\"cliente_id\" = emprestimo.\"cliente_id\"";
+            "     \"public\".\"cliente\" cliente INNER JOIN \"public\".\"emprestimo\" emprestimo ON cliente.\"cliente_id\" = emprestimo.\"cliente_id\"" +
+            "WHERE\n" +
+            "     emprestimo.\"data_devolucao\" is null";
             
             System.out.println(sql);
             

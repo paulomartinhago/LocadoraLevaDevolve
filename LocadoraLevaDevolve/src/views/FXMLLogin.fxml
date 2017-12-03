@@ -5,14 +5,21 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.FXMLLoginController">
    <children>
       <Button id="btnLogin" fx:id="btnLogin" layoutX="304.0" layoutY="368.0" mnemonicParsing="false" onAction="#login" prefHeight="43.0" prefWidth="192.0" text="Login" />
       <Label layoutX="304.0" layoutY="234.0" prefHeight="43.0" prefWidth="80.0" text="Usuario" />
       <Label layoutX="304.0" layoutY="300.0" prefHeight="26.0" prefWidth="80.0" text="Senha" />
-      <Label alignment="CENTER" layoutX="239.0" layoutY="163.0" prefHeight="43.0" prefWidth="323.0" text="LOCADORA LEVA E DEVOLVE" />
-      <TextField fx:id="txtFieldUsuario" layoutX="304.0" layoutY="270.0" prefHeight="26.0" prefWidth="192.0" text="juca" />
-      <PasswordField fx:id="txtFieldSenha" layoutX="304.0" layoutY="326.0" prefHeight="26.0" prefWidth="192.0" text="juca123" />
+      <TextField fx:id="txtFieldUsuario" layoutX="304.0" layoutY="270.0" prefHeight="26.0" prefWidth="192.0" text="" />
+      <PasswordField fx:id="txtFieldSenha" layoutX="304.0" layoutY="326.0" prefHeight="26.0" prefWidth="192.0" text="" />
+      <Text layoutX="304.0" layoutY="166.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LOCADORA" wrappingWidth="150.61376953125" />
+      <Text layoutX="303.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="LEVA &amp; DEVOLVE" wrappingWidth="236.61376953125">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>
