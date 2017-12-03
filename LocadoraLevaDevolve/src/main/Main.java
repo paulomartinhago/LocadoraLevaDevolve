@@ -1,3 +1,5 @@
+package main;
+
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -14,7 +16,7 @@ public class Main extends Application
     @Override
     public void start(final Stage stage) throws Exception 
     {
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLLogin.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/views/FXMLLogin.fxml"));
         
         Scene scene = new Scene(root);
 

@@ -1,3 +1,5 @@
+package controllers;
+
 import javafx.scene.input.MouseEvent;
 import java.io.IOException;
 import java.net.URL;

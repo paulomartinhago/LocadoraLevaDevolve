@@ -1,3 +1,6 @@
+package controllers;
+
+import main.Main;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -30,56 +33,56 @@ public class FXMLTelaInicialController implements Initializable
     @FXML
     private void onMenuCadastrarCliente(ActionEvent event) throws IOException
     {
-        Parent tela = FXMLLoader.load(getClass().getResource("FXMLCadastrarCliente.fxml"));
+        Parent tela = FXMLLoader.load(getClass().getResource("/views/FXMLCadastrarCliente.fxml"));
         content.getChildren().setAll(tela);
     }
     
     @FXML
     private void onMenuCadastrarProfissional(ActionEvent event) throws IOException
     {
-        Parent tela = FXMLLoader.load(getClass().getResource("FXMLCadastrarProfissional.fxml"));
+        Parent tela = FXMLLoader.load(getClass().getResource("/views/FXMLCadastrarProfissional.fxml"));
         content.getChildren().setAll(tela);
     }
     
     @FXML
     private void onMenuCadastrarCategoriaLivro(ActionEvent event) throws IOException
     {
-        Parent tela = FXMLLoader.load(getClass().getResource("FXMLCadastrarCategoriaLivro.fxml"));
+        Parent tela = FXMLLoader.load(getClass().getResource("/views/FXMLCadastrarCategoriaLivro.fxml"));
         content.getChildren().setAll(tela);
     }
     
     @FXML
     private void onMenuCadastrarLivro(ActionEvent event) throws IOException
     {
-        Parent tela = FXMLLoader.load(getClass().getResource("FXMLCadastrarLivro.fxml"));
+        Parent tela = FXMLLoader.load(getClass().getResource("/views/FXMLCadastrarLivro.fxml"));
         content.getChildren().setAll(tela);
     }
     
     @FXML
     private void onMenuRegistrarEmprestimoLivro(ActionEvent event) throws IOException
     {
-        Parent tela = FXMLLoader.load(getClass().getResource("FXMLRegistrarEmprestimoLivro.fxml"));
+        Parent tela = FXMLLoader.load(getClass().getResource("/views/FXMLRegistrarEmprestimoLivro.fxml"));
         content.getChildren().setAll(tela);
     }
     
     @FXML
     private void onMenuRegistrarDevolucaoLivro(ActionEvent event) throws IOException
     {
-        Parent tela = FXMLLoader.load(getClass().getResource("FXMLRegistrarDevolucaoLivro.fxml"));
+        Parent tela = FXMLLoader.load(getClass().getResource("/views/FXMLRegistrarDevolucaoLivro.fxml"));
         content.getChildren().setAll(tela);
     }
     
     @FXML
     public void onMenuRelatorioEmprestimosPorCliente(ActionEvent event) throws IOException
     {
-        Parent tela = FXMLLoader.load(getClass().getResource("FXMLRelatorioEmprestimosPorCliente.fxml"));
+        Parent tela = FXMLLoader.load(getClass().getResource("/views/FXMLRelatorioEmprestimosPorCliente.fxml"));
         content.getChildren().setAll(tela);
     }
     
     @FXML
     public void onMenuRelatorioEmprestimosEmAndamento(ActionEvent event) throws IOException
     {
-        Parent tela = FXMLLoader.load(getClass().getResource("FXMLRelatorioEmprestimosEmAndamento.fxml"));
+        Parent tela = FXMLLoader.load(getClass().getResource("/views/FXMLRelatorioEmprestimosEmAndamento.fxml"));
         content.getChildren().setAll(tela);
     }
     
@@ -93,7 +96,7 @@ public class FXMLTelaInicialController implements Initializable
         if( ! confirm.showAndWait().filter(ButtonType.YES::equals).isPresent() )
             return;
         
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLLogin.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/views/FXMLLogin.fxml"));
         Scene scene = new Scene(root);
         Main.myStage.setScene(scene);
     }

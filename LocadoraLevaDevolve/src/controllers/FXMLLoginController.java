@@ -1,3 +1,6 @@
+package controllers;
+
+import main.Main;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -53,7 +56,7 @@ public class FXMLLoginController implements Initializable
             if(logado){
                 Main.usuario = usuario;
                 
-                Parent root = FXMLLoader.load(getClass().getResource("FXMLTelaInicial.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("/views/FXMLTelaInicial.fxml"));
                 Scene scene = new Scene(root);
                 Main.myStage.setScene(scene);
             } else {
